@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Paiement d’abonnement</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <main class="container">
+    <h1 id="title">Paiement d’abonnement</h1>
+
+    <div id="customer-box" class="card">
+      <div id="customer-line">Chargement des informations…</div>
+      <div class="tos">
+        <label>
+          <input type="checkbox" id="accept" />
+          <span>
+            J’ai lu et j’accepte le contrat :
+            <a id="contract-link" href="#" target="_blank" rel="noopener">ouvrir le contrat</a>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <form id="payment-form" class="card">
+      <div id="payment-element"><!-- Stripe Payment Element --></div>
+      <div id="messages" role="alert" aria-live="polite"></div>
+      <button id="submit" type="submit">Payer et démarrer l’abonnement</button>
+      <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+    </form>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
